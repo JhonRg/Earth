@@ -1,0 +1,128 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		mavenLocal()
+	}
+	dependencies {
+		classpath('org.springframework.boot:spring-boot-gradle-plugin:3.3.0')
+	}
+}
+plugins {
+	id 'org.springframework.boot' version '3.3.0'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+allprojects {
+
+	apply plugin: 'java'
+	apply plugin:'io.spring.dependency-management'
+
+	java {
+		toolchain {
+			languageVersion = JavaLanguageVersion.of(21)
+		}
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		implementation("org.springframework:spring-context:6.1.8")
+		//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+		implementation("org.springframework.boot:spring-boot-starter-web:3.3.0")
+		testImplementation("org.springframework.boot:spring-boot-starter-test:3.3.0")
+
+
+		compileOnly("org.projectlombok:lombok:1.18.32")
+		annotationProcessor("org.projectlombok:lombok:1.18.32")
+
+		testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.0-M2")
+		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	}
+	test {
+		useJUnitPlatform()
+
+		testLogging {
+			events "passed", "skipped", "failed"
+		}
+	}
+	task view_paths{
+		doLast{ task ->
+			println "$task.project.name"
+			println "------------------"
+			println "Main: $sourceSets.main.java.srcDirTrees"
+			println "   Resources: $sourceSets.main.resources.srcDirTrees"
+			println "Tests: $sourceSets.test.java.srcDirTrees"
+			println "   Resources: $sourceSets.test.resources.srcDirTrees"
+		}
+	}
+}
+subprojects {
+	group = "sky.dev.${rootProject.name}"
+	apply plugin: 'java'
+	sourceSets {
+		main {
+			java { srcDirs = ['main'] }
+			resources { srcDirs = ['main/resources'] }
+		}
+		test{
+			java {srcDirs = ['test'] }
+			resources { srcDirs = ['test/resources'] }
+		}
+	}
+
+	dependencies{
+
+	}
+	bootJar{
+		enabled = false
+	}
+	jar{
+		enabled = true
+	}
+
+}
+
+//Root Application Source
+sourceSets{
+	apply plugin: 'application'
+
+	main{
+		java { srcDirs = ['apps/main']}
+		resources { srcDirs = ['apps/main/resources']}
+	}
+	test{
+		java { srcDirs = ['apps/test']}
+		resources { srcDirs = ['apps/test/resources']}
+	}
+}
+
+//Root application configuration
+group = 'sky.dev'
+version = '0.0.1-SNAPSHOT'
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+bootJar{
+	archiveBaseName.set('earth')
+	archiveVersion.set('0.0.1-SNAPSHOT')
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+application {
+	applicationDefaultJvmArgs = ['-Dgreeting.language=en']
+}
+dependencies {
+	implementation project(':manga_library')
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+
