@@ -1,7 +1,5 @@
 package sky.earth.apps.manga.controller;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +8,7 @@ import sky.earth.manga.application.create.MangaCreator;
 @RestController("manga")
 public final class MangaPutController {
     MangaCreator creator;
+    public MangaPutController(final MangaCreator creator) {this.creator = creator;}
 
     @PutMapping(value = "/saveManga/{id}", consumes = {"application/json"})
     public ResponseEntity<String> createManga(@PathVariable String id,@RequestBody Request request) {

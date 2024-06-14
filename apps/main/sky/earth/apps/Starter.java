@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import sky.earth.apps.manga.controller.MangaPutController;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"sky.earth.apps", "sky.earth.manga"})
 public class Starter {
     private static ApplicationContext applicationContext;
 
@@ -20,7 +20,6 @@ public class Starter {
         for (String name : applicationContext.getBeanDefinitionNames()) {
             System.out.println(name);
         }
-        AutowireCapableBeanFactory beanFactory = applicationContext.getAutowireCapableBeanFactory();
         checkBeansPressence("manga");
     }
 
