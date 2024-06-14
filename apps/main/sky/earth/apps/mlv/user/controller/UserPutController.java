@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import sky.earth.mlv.usuarios.application.create.UserCreator;
-import sky.earth.mlv.usuarios.domain.User;
 
 @RestController("user")
 public class UserPutController {

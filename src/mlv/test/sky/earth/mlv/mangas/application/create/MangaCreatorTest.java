@@ -2,7 +2,6 @@ package sky.earth.mlv.mangas.application.create;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sky.earth.mlv.mangas.application.create.MangaCreator;
 import sky.earth.mlv.mangas.domain.Manga;
 import sky.earth.mlv.mangas.domain.MangaRepository;
 

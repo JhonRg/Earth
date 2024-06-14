@@ -2,13 +2,10 @@ package sky.earth.mlv.usuarios.application.create;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import sky.earth.mlv.usuarios.domain.User;
 import sky.earth.mlv.usuarios.domain.UserRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
