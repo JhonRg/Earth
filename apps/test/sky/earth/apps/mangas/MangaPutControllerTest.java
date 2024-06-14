@@ -11,7 +11,7 @@ public final class MangaPutControllerTest extends RequestTestCase {
     public void saveManga() throws Exception {
         assertRequestWithBody(
         "POST",
-        "/saveManga/201",
+        "manga/saveManga/201",
             "{\"name\":\"One Piece\", \"author\":\"Eichiro Oda\"}",
                 201
         );
