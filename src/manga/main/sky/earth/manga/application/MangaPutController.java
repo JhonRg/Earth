@@ -1,4 +1,4 @@
-package java.sky.dev.earth.application;
+package sky.earth.manga.application;
 
 import lombok.Getter;
 import lombok.Setter;

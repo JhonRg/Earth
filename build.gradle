@@ -57,7 +57,7 @@ allprojects {
 	}
 }
 subprojects {
-	group = "sky.dev.${rootProject.name}"
+	group = "sky.earth.${rootProject.name}"
 	apply plugin: 'java'
 	sourceSets {
 		main {
@@ -89,7 +89,7 @@ sourceSets{
 }
 
 //Root application configuration
-group = 'sky.dev'
+group = 'sky.earth'
 version = '0.0.1-SNAPSHOT'
 java {
 	toolchain {
@@ -105,7 +105,7 @@ application {
 	applicationDefaultJvmArgs = ['-Dgreeting.language=en']
 }
 dependencies {
-	implementation project(':manga_library')
+	implementation project(':manga')
 }
 
 configurations {

@@ -1,6 +1,6 @@
 rootProject.name = 'earth'
 
-include ':manga_library'
-project(':manga_library').projectDir = new File ('src/mangaLibrary')
+include ':manga'
+project(':manga').projectDir = new File ('src/manga')
 
 
