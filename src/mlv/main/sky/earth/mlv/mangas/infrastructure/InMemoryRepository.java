@@ -1,8 +1,8 @@
-package sky.earth.manga.infrastructure;
+package sky.earth.mlv.mangas.infrastructure;
 
 import org.springframework.stereotype.Repository;
-import sky.earth.manga.domain.Manga;
-import sky.earth.manga.domain.MangaRepository;
+import sky.earth.mlv.mangas.domain.Manga;
+import sky.earth.mlv.mangas.domain.MangaRepository;
 
 import java.util.HashMap;
 import java.util.Optional;

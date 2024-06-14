@@ -1,7 +1,8 @@
-package sky.earth.manga.infrastructure;
+package sky.earth.mlv.mangas.infrastructure;
 
 import org.junit.jupiter.api.Test;
-import sky.earth.manga.domain.Manga;
+import sky.earth.mlv.mangas.domain.Manga;
+import sky.earth.mlv.mangas.infrastructure.InMemoryRepository;
 
 import java.util.Optional;
 

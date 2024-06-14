@@ -1,9 +1,9 @@
-package sky.earth.apps.manga.controller;
+package sky.earth.apps.mlv.manga.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sky.earth.manga.application.create.MangaCreator;
+import sky.earth.mlv.mangas.application.create.MangaCreator;
 
 @RestController("manga")
 public final class MangaPutController {

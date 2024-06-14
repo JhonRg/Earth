@@ -1,4 +1,4 @@
-package sky.earth.apps.manga.controller;
+package sky.earth.apps.mlv.manga;
 
 import com.fasterxml.jackson.core.json.UTF8JsonGenerator;
 import org.junit.jupiter.api.Test;

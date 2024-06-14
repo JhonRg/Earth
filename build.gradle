@@ -116,7 +116,7 @@ application {
 	applicationDefaultJvmArgs = ['-Dgreeting.language=en']
 }
 dependencies {
-	implementation project(':manga')
+	implementation project(':mlv')
 }
 
 configurations {

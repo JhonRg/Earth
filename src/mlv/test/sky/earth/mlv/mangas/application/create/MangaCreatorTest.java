@@ -1,9 +1,10 @@
-package sky.earth.manga.application.create;
+package sky.earth.mlv.mangas.application.create;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sky.earth.manga.domain.Manga;
-import sky.earth.manga.domain.MangaRepository;
+import sky.earth.mlv.mangas.application.create.MangaCreator;
+import sky.earth.mlv.mangas.domain.Manga;
+import sky.earth.mlv.mangas.domain.MangaRepository;
 
 import static org.mockito.Mockito.*;
 

@@ -1,8 +1,8 @@
-package sky.earth.manga.application.create;
+package sky.earth.mlv.mangas.application.create;
 
 import org.springframework.stereotype.Service;
-import sky.earth.manga.domain.Manga;
-import sky.earth.manga.domain.MangaRepository;
+import sky.earth.mlv.mangas.domain.Manga;
+import sky.earth.mlv.mangas.domain.MangaRepository;
 
 @Service
 public final class MangaCreator {

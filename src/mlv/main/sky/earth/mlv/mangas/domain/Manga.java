@@ -1,4 +1,4 @@
-package sky.earth.manga.domain;
+package sky.earth.mlv.mangas.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
