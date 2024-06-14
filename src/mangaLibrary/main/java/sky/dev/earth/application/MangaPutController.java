@@ -1,5 +1,7 @@
 package java.sky.dev.earth.application;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,13 +15,10 @@ public class MangaPutController {
 
     }
 }
+@Setter
+@Getter
 final class Request{
         private String title;
         private String author;
-
-        public String getTitle() {return title;}
-        public String getAuthor() {return author;}
-        public void setTitle(String title) {this.title = title;}
-        public void setAuthor(String author) {this.author = author;}
 }
 
