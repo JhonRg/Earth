@@ -69,17 +69,9 @@ subprojects {
 			resources { srcDirs = ['test/resources'] }
 		}
 	}
-
-	dependencies{
-
-	}
-	bootJar{
-		enabled = false
-	}
-	jar{
-		enabled = true
-	}
-
+	dependencies{}
+	bootJar{ enabled = false }
+	jar{ enabled = true	}
 }
 
 //Root Application Source

@@ -1,4 +1,4 @@
-package sky.earth.apps.controllers;
+package sky.earth.apps.health_check;
 
 import org.junit.jupiter.api.Test;
 import sky.earth.apps.RequestTestCase;

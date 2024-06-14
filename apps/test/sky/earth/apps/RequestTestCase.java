@@ -3,10 +3,12 @@ package sky.earth.apps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpMethod;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -27,5 +29,11 @@ public abstract class RequestTestCase {
             .andExpect(status().is(expectedStatucCode))
             .andExpect(response);
 
+    }
+    public void assertRequestWithBody(String method, String endpoint, String body, Integer expectedStatucCode) throws Exception {
+        mvc
+            .perform(request(HttpMethod.valueOf(method), endpoint).content(body).contentType("APPLICATION_JSON"))
+            .andExpect(status().is(expectedStatucCode))
+            .andExpect(content().json(""));
     }
 }
