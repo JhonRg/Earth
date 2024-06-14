@@ -1,15 +1,14 @@
 package sky.earth.apps;
 
-import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import sky.earth.apps.manga.controller.MangaPutController;
+import sky.earth.apps.mlv.manga.controller.MangaPutController;
 
 
-@SpringBootApplication(scanBasePackages = {"sky.earth.apps", "sky.earth.manga"})
+@SpringBootApplication(scanBasePackages = {"sky.earth.apps", "sky.earth.mlv"})
 public class Starter {
     private static ApplicationContext applicationContext;
 
