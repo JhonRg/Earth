@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 
@@ -32,8 +33,8 @@ public abstract class RequestTestCase {
     }
     public void assertRequestWithBody(String method, String endpoint, String body, Integer expectedStatucCode) throws Exception {
         mvc
-            .perform(request(HttpMethod.valueOf(method), endpoint).content(body).contentType("APPLICATION_JSON"))
+            .perform(request(HttpMethod.valueOf(method), endpoint).content(body).contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().is(expectedStatucCode))
-            .andExpect(content().json(""));
+            .andExpect(content().string(""));
     }
 }
